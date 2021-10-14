@@ -1,0 +1,29 @@
+//@import "../../../theme/variables";
+
+#header{
+    flex: 1;
+}
+
+#welcome{
+    background-color: lightGreen;
+    text-align: center;
+
+    h1 {
+        font-size: 52px;
+        font-weight: bold;
+        margin-top: 50px;
+        padding: 30px;
+    }
+    div {
+        margin-top: 50px;
+        font-size: 22px;
+    }
+    button {
+        margin-top: 70px;
+        margin-left: 50px;
+        height: 40px;
+        width:  150px;
+        background-color: darkBlue;
+        color: white;
+    }
+}

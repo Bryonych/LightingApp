@@ -1,0 +1,7 @@
+{
+  "name": "smartLight",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
