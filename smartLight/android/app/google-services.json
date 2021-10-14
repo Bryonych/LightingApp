@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "936207965977",
+    "project_id": "smart-light-92503",
+    "storage_bucket": "smart-light-92503.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936207965977:android:2328ca53ac7a22246d2f88",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936207965977-r1mk6q92ppbh4pt26g5rbr1bou3qhn2s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.starter",
+            "certificate_hash": "054ecd18f96e7dfae29496a248791104b7c19afb"
+          }
+        },
+        {
+          "client_id": "936207965977-a341jai3ip0d6vprlsp9k11t7jj8shqh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3SYWlA0jFHnuavxjccwRDelvngMgIkTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936207965977-a341jai3ip0d6vprlsp9k11t7jj8shqh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
