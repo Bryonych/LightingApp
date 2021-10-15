@@ -5,7 +5,7 @@ import { IndexPage } from './index.page';
 const routes: Routes = [
 
     {
-        path: '',
+        path: 'index',
         component: IndexPage,
         children:[
             {

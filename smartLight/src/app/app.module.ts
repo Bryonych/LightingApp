@@ -6,8 +6,11 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-//import { StatusBar } from '@ionic-native/staus-bar/ngx';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { FirebaseAuthService } from './services/firebase-auth.service';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 
 
 @NgModule({
@@ -15,10 +18,15 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
+  ],
   providers: [
-    //StatusBar,
-    //SplashScreen,
+    FirebaseAuthService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

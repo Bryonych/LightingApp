@@ -1,21 +1,28 @@
-<ion-header>
+
+<ion-header id="header">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
+<ion-content>
+  <ion-list id="login">
 
     <ion-item>
       <ion-label fixed>Email</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input required= true type="email" [(ngModel)]="email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label fixed>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input required= true type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
-    <button ion-button block color="darkBlue" (click)="login()">Login</button>
+    <button ion-button block id="button" (click)="login()">Login</button>
+    <div class = "error-container" *ngIf="displayError">
+      <div class="error-message">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>{{displayError}}</span>
+      </div>
+    </div>
 
   </ion-list>
 

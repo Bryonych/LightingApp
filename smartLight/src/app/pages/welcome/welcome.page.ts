@@ -16,13 +16,11 @@ export class WelcomePage implements OnInit {
   }
 
   login() {
-    this.router.navigate(['/login'])
-    //this.navCtrl.navigateRoot('../login/login.page');
+    this.router.navigate(['/index/login'])
   }
 
   register() {
-    this.router.navigate(['/registration'])
-    //this.navCtrl.navigateRoot('./registration.page');
+    this.router.navigate(['/index/registration'])
   }
 
 }

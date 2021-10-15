@@ -1,26 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>registration</ion-title>
+<ion-header id="header">
+  <ion-toolbar color="success-shade">
+    <ion-title>Registration</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list id="registration">
 
     <ion-item>
       <ion-label fixed>Name</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input required= true type="text" [(ngModel)]="name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label fixed>Email</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input required = true type="email"[(ngModel)]="email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label fixed>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input reqired = true minLength=6 type="password"[(ngModel)]="password"></ion-input>
     </ion-item>
 
-    <button ion-button block color="darkBlue" (click)="signup()">Register</button>
+    <button ion-button block id="button" (click)="signup()">Register</button>
+    <div class="error-container" *ngIf="displayError">
+      <div class="error-message">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>{{ displayError }}</span>
+      </div>
+    </div>
 
   </ion-list>
 </ion-content>
