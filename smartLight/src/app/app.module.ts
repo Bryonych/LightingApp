@@ -10,7 +10,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { FirebaseAuthService } from './services/firebase-auth.service';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-
+import { BLE } from '@ionic-native/ble/ngx';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -27,6 +28,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
   ],
   providers: [
     FirebaseAuthService,
+    BLE,
+    AuthGuard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

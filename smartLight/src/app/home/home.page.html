@@ -1,29 +1,30 @@
-<ion-content padding id="scan">
-
+<ion-header id="header">
   <img src='../assets/images/bulb.PNG'>
-  <ion-toolbar>
-    <ion-buttons>
-      <button ion-button id="button" icon-left (click)="startScanning()" *ngIf="!isScanning">
-        <ion-icon name="bluetooth-outline"></ion-icon>Scan</button>
-      <button ion-button id="buttonTwo" icon-left (click)="stopScanning()" *ngIf="isScanning">
-        <ion-icon name="stop-circle-outline"></ion-icon>
-        <ion-spinner></ion-spinner>Stop</button>  
-    </ion-buttons>
-  </ion-toolbar>
+  <ion-buttons end>
+    <button ion-button id="button" icon-left (click)="startScanning()" *ngIf="!isScanning">
+      <ion-icon name="bluetooth-outline"></ion-icon>Scan</button>
+    <button ion-button id="button" icon-left (click)="stopScanning()" *ngIf="isScanning">
+      <ion-icon name="stop-circle-outline"></ion-icon>
+      <ion-spinner></ion-spinner>Stop</button>  
+  </ion-buttons>
+  
+</ion-header>
 
-  <ion-list>
-    <ion-item *ngFor="let light of lights">
-      <button ion-item (click)="selectLight(light)">
+<ion-content padding id="scan">
+  
+  <ion-list padding>
+    <ion-card-content ion-item *ngFor="let device of devices">
+      <button ion-item (click)="selectLight(device)">
         <ion-icon name="bulb-outline"></ion-icon>
-        <h2>{{light.name}}</h2>
-        <p>{{light.id}}</p>
-        <p>{{light.rssi}} dBm</p>
+        <h2>{{device.name}}</h2>
+        <p>{{device.id}}</p>
+        <p>RSSI: {{device.rssi}}</p>
       </button>
-    </ion-item>
+    </ion-card-content>
   </ion-list>
+</ion-content> 
 
-
-<ion-tabs>
+<ion-tabs id="tabBar">
 
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="controller">
@@ -48,5 +49,3 @@
   </ion-tab-bar>
 
 </ion-tabs>
-
-</ion-content>

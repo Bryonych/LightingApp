@@ -1,27 +1,45 @@
-#scan {
-
-    img {
-        height: 30vh;
-        width: auto;
-        margin: auto;
-        display: block;
-        padding-top: 20px
-    }
-
+#header {
+    
     button{
         margin: auto;
         height: 40px;
-        width:  150px;
-        background-color: darkBlue;
-        color: white;
+        width:  100px;
+        background-color: lightBlue;
+        font-weight: bold;
+        color: darkBlue;
     }
 
-    buttonTwo{
+    img {
+        height: 25vh;
+        width: auto;
         margin: auto;
-        height: 40px;
-        width:  150px;
-        background-color: darkBlue;
-        color: white;
+        display: block;
+        padding: 20px
+    }
+}
+
+#scan {
+    
+    ion-list {
+        margin-top: 20px;
+        padding: 5px;
     }
 
 }
+
+#tabBar {
+
+    ion-tab-button {
+        background-color: lightblue;
+    }
+
+    ion-icon {
+        color: darkBlue;
+    }
+
+    ion-label {
+        color: darkBlue;
+        font-weight: bold;
+    }
+}
+

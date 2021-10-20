@@ -12,7 +12,7 @@ import { IndexRouter } from './index.router';
     CommonModule,
     FormsModule,
     IonicModule,
-    IndexRouter
+    IndexRouter,
   ],
   declarations: [IndexPage]
 })

@@ -7,18 +7,18 @@ const routes: Routes = [
     path: 'home',
     component: HomePage,
     children:[
-        {
-            path:'controller',
-            loadChildren:() => import('../pages/controller/controller.module').then(m => m.ControllerPageModule)
+      {
+          path:'controller',
+          loadChildren:() => import('../pages/controller/controller.module').then(m => m.ControllerPageModule),
+      },
+      {
+          path: 'proximity',
+          loadChildren: () => import('../pages/proximity/proximity.module').then( m => m.ProximityPageModule),
         },
         {
-            path: 'proximity',
-            loadChildren: () => import('../pages/proximity/proximity.module').then( m => m.ProximityPageModule)
-          },
-          {
-            path: 'colours',
-            loadChildren: () => import('../pages/colours/colours.module').then( m => m.ColoursPageModule)
-          },
+          path: 'colours',
+          loadChildren: () => import('../pages/colours/colours.module').then( m => m.ColoursPageModule),
+        },
     ]
 }
   

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-colours',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColoursPage implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
+  }
+
+  goHome() {
+    this.router.navigate(['/home']);
   }
 
 }

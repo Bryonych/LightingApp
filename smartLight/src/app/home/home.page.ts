@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { FirebaseAuthService } from 'src/app/services/firebase-auth.service';
 import { NgZone } from '@angular/core'
-import { Platform } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 import { BLE } from '@ionic-native/ble/ngx';
 
 @Component({
@@ -12,14 +12,14 @@ import { BLE } from '@ionic-native/ble/ngx';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  lights = [];
+  devices: any[] = [];
   isScanning: boolean = false;
-  private android: boolean;
+  status: string = "";
 
   constructor(public angularFire: AngularFireAuth, public router: Router, 
     private zone: NgZone, private authService: FirebaseAuthService, 
-    private ble: BLE, platform: Platform) 
-  { this.android = platform.is('android');}
+    private ble: BLE, private toastControl: ToastController) 
+  { }
 
   ngOnInit() {
   }
@@ -32,29 +32,39 @@ export class HomePage implements OnInit {
       console.log("Signout error ", error);
     });
   }
-
-  private enableBLE() {
-    if (this.android) {
-      return this.ble.enable();
-    }
-    else {
-      return Promise.resolve();
-    }
-  }
+ 
 
   startScanning() {
-    this.lights.length = 0;
+    this.devices = []; //empty the list
     this.isScanning = true;
-    this.enableBLE().then(() => {
-      this.ble.startScan([]).subscribe(light => {
-        this.zone.run(() => {
-          this.lights.push(light);
-        });
-      });
-    }).catch(error => {
-      console.log("Couldn't enable BLE ", error);
-      this.isScanning = false;
+    this.ble.scan([], 15).subscribe(
+      device => this.deviceDiscovered(device),
+      error => this.scanError(error)
+    );
+    setTimeout(this.setStatus.bind(this), 5000, "Scan complete");
+  }
+
+  async scanError(error) {
+    let toast = await this.toastControl.create({
+      message: "Error scanning for devices",
+      position: "middle",
+      duration: 5000
     });
+    toast.present();
+  }
+
+  deviceDiscovered(device) {
+    console.log("Device: " + JSON.stringify(device, null, 2));
+    this.zone.run(() => {
+      this.devices.push(device);
+    });
+  }
+
+  setStatus(message) {
+    console.log(message);
+    this.zone.run(() => {
+      this.status = message;
+    })
   }
 
   stopScanning() {
@@ -65,11 +75,16 @@ export class HomePage implements OnInit {
     });
   }
 
-  selectLight(light) {
+  selectLight(device) {
     if (this.isScanning) {
       this.stopScanning();
     }
-    this.router.navigate(['/home/controller']);
+    let navigationExtras: NavigationExtras = {
+      state: {
+        light: device
+      }
+    };
+    this.router.navigate(['/home/controller', navigationExtras]);
   }
 
 
