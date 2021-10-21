@@ -2,5 +2,6 @@
 	"appId": "io.ionic.starter",
 	"appName": "smartLight",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+	"loadUrlTimeoutValue": 600000
 }

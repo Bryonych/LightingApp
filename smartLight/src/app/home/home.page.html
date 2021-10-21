@@ -10,18 +10,22 @@
   
 </ion-header>
 
-<ion-content padding id="scan">
-  
-  <ion-list padding>
-    <ion-card-content ion-item *ngFor="let device of devices">
-      <button ion-item (click)="selectLight(device)">
-        <ion-icon name="bulb-outline"></ion-icon>
-        <h2>{{device.name}}</h2>
-        <p>{{device.id}}</p>
-        <p>RSSI: {{device.rssi}}</p>
-      </button>
-    </ion-card-content>
-  </ion-list>
+<ion-content id="scan">
+  <ion-list>
+    <ion-item *ngFor="let device of devices">
+      <!-- <button ion-item (click)="selectLight(device)"> -->
+      <button ion-item (click)="selectLight(device)">      
+        <!-- <ion-label > -->
+          <ion-icon name="bulb-outline"></ion-icon>
+          <h2>{{device.name}}</h2>
+          <p>{{device.id}}</p>
+          <p>RSSI: {{device.rssi}}</p>
+          
+        <!-- </ion-label>      -->
+      </button> 
+      </ion-item>
+      <!-- </ion-item-divider> -->
+    </ion-list>
 </ion-content> 
 
 <ion-tabs id="tabBar">

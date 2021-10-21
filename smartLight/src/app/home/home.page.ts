@@ -76,6 +76,7 @@ export class HomePage implements OnInit {
   }
 
   selectLight(device) {
+    console.log("selected");
     if (this.isScanning) {
       this.stopScanning();
     }
