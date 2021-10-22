@@ -1,32 +1,7 @@
-<ion-header id="header">
-  <img src='../assets/images/bulb.PNG'>
-  <ion-buttons end>
-    <button ion-button id="button" icon-left (click)="startScanning()" *ngIf="!isScanning">
-      <ion-icon name="bluetooth-outline"></ion-icon>Scan</button>
-    <button ion-button id="button" icon-left (click)="stopScanning()" *ngIf="isScanning">
-      <ion-icon name="stop-circle-outline"></ion-icon>
-      <ion-spinner></ion-spinner>Stop</button>  
-  </ion-buttons>
-  
-</ion-header>
+<ion-content>
+  <router-outlet></router-outlet>
+</ion-content>
 
-<ion-content id="scan">
-  <ion-list>
-    <ion-item *ngFor="let device of devices">
-      <!-- <button ion-item (click)="selectLight(device)"> -->
-      <button ion-item (click)="selectLight(device)">      
-        <!-- <ion-label > -->
-          <ion-icon name="bulb-outline"></ion-icon>
-          <h2>{{device.name}}</h2>
-          <p>{{device.id}}</p>
-          <p>RSSI: {{device.rssi}}</p>
-          
-        <!-- </ion-label>      -->
-      </button> 
-      </ion-item>
-      <!-- </ion-item-divider> -->
-    </ion-list>
-</ion-content> 
 
 <ion-tabs id="tabBar">
 
@@ -41,9 +16,9 @@
       <ion-label>Proximity</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="colours">
-      <ion-icon name="color-palette-outline"></ion-icon>
-      <ion-label>Colours</ion-label>
+    <ion-tab-button tab="scan">
+      <ion-icon name="scan-circle-outline"></ion-icon>
+      <ion-label>Scan</ion-label>
     </ion-tab-button>
 
     <ion-tab-button (click)="logout()">

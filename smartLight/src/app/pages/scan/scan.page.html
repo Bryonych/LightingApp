@@ -1,0 +1,40 @@
+<ion-header id="header">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src='../assets/images/bulb.PNG'>
+      </ion-col>
+      <ion-col>
+        <ion-buttons end>
+          <button ion-button id="button" icon-left (click)="startScanning()" *ngIf="!isScanning">
+            <ion-icon name="bluetooth-outline"></ion-icon>Scan</button>
+          <button ion-button id="button" icon-left (click)="stopScanning()" *ngIf="isScanning">
+            <ion-icon name="stop-circle-outline"></ion-icon>
+            <ion-spinner></ion-spinner>Stop</button>  
+        </ion-buttons>
+      </ion-col>
+      <ion-col>
+        <img src='../assets/images/bulb.PNG'>
+      </ion-col>
+    </ion-row>  
+  </ion-grid>
+</ion-header>
+
+<ion-content padding class="scan">
+
+  <ion-list>
+      <ion-item *ngFor="let device of devices">
+      <!-- <button ion-item (click)="selectLight(device)"> -->
+        <button ion-item id="item" (click)="selectLight(device)">      
+          <!-- <ion-label > -->
+            <ion-icon name="bulb-outline"></ion-icon>
+            <h2>{{device.name}}</h2>
+            <p>{{device.id}}</p>
+            <p>RSSI: {{device.rssi}}</p>
+            
+          <!-- </ion-label>      -->
+        </button> 
+      </ion-item>
+      <!-- </ion-item-divider> -->
+    </ion-list>
+  </ion-content>

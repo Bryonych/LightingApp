@@ -8,17 +8,18 @@ const routes: Routes = [
     component: HomePage,
     children:[
       {
+        path: 'scan',
+        loadChildren: () => import('../pages/scan/scan.module').then( m => m.ScanPageModule),
+      },
+      {
           path:'controller',
           loadChildren:() => import('../pages/controller/controller.module').then(m => m.ControllerPageModule),
       },
       {
           path: 'proximity',
           loadChildren: () => import('../pages/proximity/proximity.module').then( m => m.ProximityPageModule),
-        },
-        {
-          path: 'colours',
-          loadChildren: () => import('../pages/colours/colours.module').then( m => m.ColoursPageModule),
-        },
+      }
+       
     ]
 }
   

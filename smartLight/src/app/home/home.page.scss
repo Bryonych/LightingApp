@@ -1,38 +1,19 @@
-#header {
-    
-    button{
+#content{
+    text-align: center;
+
+    h1 {
+        font-size: 52px;
+        font-weight: bold;
+        margin-top: 50px;
+        padding: 30px;
+    }
+    button {
         margin: auto;
         height: 40px;
-        width:  100px;
-        background-color: lightBlue;
-        font-weight: bold;
-        color: darkBlue;
+        width:  150px;
+        background-color: darkBlue;
+        color: white;
     }
-
-    img {
-        height: 25vh;
-        width: auto;
-        margin: auto;
-        display: block;
-        padding: 20px
-    }
-}
-
-#scan {
-    
-    ion-list {
-        margin-top: 20px;
-        padding: 5px;
-    }
-
-    ion-item {
-       // position: absolute;
-       // top: 0;
-        left: 0;
-        right: 0;
-
-    }
-
 }
 
 #tabBar {

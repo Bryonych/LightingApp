@@ -1,0 +1,36 @@
+#header {
+
+    button {
+        margin: auto;
+        height: 50px;
+        width:  100px;
+        background-color: lightBlue;
+        font-weight: bold;
+        color: darkBlue;
+    }
+
+    img {
+        height: 7vh;
+        width: auto;
+        margin: auto;
+        display: block;
+    }
+}
+
+#scan {
+
+    
+    ion-list {
+        margin-top: 20px;
+        padding: 5px;
+    }
+
+    #item {
+       // position: absolute;
+       // top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+}
