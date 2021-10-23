@@ -12,6 +12,7 @@ import { FirebaseAuthService } from './services/firebase-auth.service';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { BLE } from '@ionic-native/ble/ngx';
 import { AuthGuard } from './guards/auth.guard';
+import { BluetoothConnectionService } from './services/bluetooth-connection.service';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { AuthGuard } from './guards/auth.guard';
   ],
   providers: [
     FirebaseAuthService,
+    BluetoothConnectionService,
     BLE,
     AuthGuard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
+/**
+ * Entry point to the app.
+ */
 export class AppComponent {
   rootPage = WelcomePage;
   items:Observable<any[]>;

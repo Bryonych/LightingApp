@@ -4,6 +4,9 @@ import { CanActivate, Router,  ActivatedRouteSnapshot, RouterStateSnapshot, } fr
 import { Observable } from 'rxjs';
 import firebase from 'firebase/compat/app';
  
+/**
+ * Guard to stop access to app without authentication.
+ */
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(private router: Router) {}

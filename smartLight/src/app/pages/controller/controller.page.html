@@ -1,64 +1,65 @@
-<ion-header>
+<ion-header id="header">
   <ion-toolbar>
     <ion-title>Controller</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="controller">
+<ion-content padding id="controller">
   <ion-spinner *ngIf="connecting" name="circles"></ion-spinner>
+  <button id="button" ion-button *ngIf="connecting" (check)="reconnect()">Reconnect</button>
+  <img src='../assets/images/bulb.PNG'>
   
-  <ion-buttons *ngIf="!connecting">
+  <ion-buttons >
     <ion-grid>
       <ion-row>
         <ion-col>
-    <button ion-button icon-left (click)="turnOn()">
-      <ion-icon name="bulb-outline"></ion-icon>
-      Turn On
-    </button>
-    </ion-col>
-    <ion-col>
-    <button ion-button icon-left (click)="turnOff()">
-      <ion-icon name="eye-off-outline"></ion-icon>
-      Turn Off
-    </button>
-  </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-    <button ion-button icon-left (click)="brighten()">
-      <ion-icon name="sunny-outline"></ion-icon>
-      Brighten
-    </button>
-  </ion-col>
-  <ion-col>
-    <button ion-button icon-left (click)="dim()">
-      <ion-icon name="flashlight-outline"></ion-icon>
-      Dim
-    </button>
-  </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-    <button ion-button icon-left (click)="turnRed()">
-      <ion-icon name="flame-outline"></ion-icon>
-      Red
-    </button>
-  </ion-col>
-  <ion-col>
-    <button ion-button icon-left (click)="turnGreen()">
-      <ion-icon name="leaf-outline"></ion-icon>
-      Green
-    </button>
-  </ion-col>
-  <ion-col>
-    <button ion-button icon-left (click)="turnBlue()">
-      <ion-icon name="snow-outline"></ion-icon>
-      Blue
-    </button>
-  </ion-col>
-  </ion-row>
-  </ion-grid>
+          <button id="button" ion-button icon-left (click)="turnOn()">
+            <ion-icon name="bulb-outline"></ion-icon>
+            Turn On
+          </button>
+        </ion-col>
+        <ion-col>
+          <button id="button" ion-button icon-left (click)="turnOff()">
+            <ion-icon name="eye-off-outline"></ion-icon>
+            Turn Off
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button id="button" ion-button icon-left (click)="brighten()">
+            <ion-icon name="sunny-outline"></ion-icon>
+            Brighten
+          </button>
+        </ion-col>
+        <ion-col>
+          <button id="button" ion-button icon-left (click)="makeDim()">
+            <ion-icon name="flashlight-outline"></ion-icon>
+            Dim
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button id="red" ion-button icon-left (click)="turnRed()">
+            <ion-icon name="flame-outline"></ion-icon>
+            Red
+          </button>
+        </ion-col>
+        <ion-col>
+          <button id="green" ion-button icon-left (click)="turnGreen()">
+            <ion-icon name="leaf-outline"></ion-icon>
+            Green
+          </button>
+        </ion-col>
+        <ion-col>
+          <button id="blue" ion-button icon-left (click)="turnBlue()">
+            <ion-icon name="snow-outline"></ion-icon>
+            Blue
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-buttons>
-
 
 </ion-content>

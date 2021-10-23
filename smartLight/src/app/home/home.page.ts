@@ -10,11 +10,9 @@ import { FirebaseAuthService } from 'src/app/services/firebase-auth.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  
 
   constructor(public angularFire: AngularFireAuth, public router: Router, 
-     private authService: FirebaseAuthService, 
-    ) 
+     private authService: FirebaseAuthService) 
   { }
 
   ngOnInit() {
@@ -29,9 +27,5 @@ export class HomePage implements OnInit {
     });
   }
 
-  scan() {
-    console.log("scan");
-    this.router.navigate(['/home/scan']);
-  }
  
 }

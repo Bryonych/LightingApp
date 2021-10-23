@@ -8,6 +8,9 @@ import { FirebaseAuthService } from 'src/app/services/firebase-auth.service';
   templateUrl: './registration.page.html',
   styleUrls: ['./registration.page.scss'],
 })
+/**
+ * Represents the registration page.
+ */
 export class RegistrationPage implements OnInit {
   name: string = "";
   email: string = "";
@@ -41,6 +44,10 @@ export class RegistrationPage implements OnInit {
         this.displayError = error.message;
       }
     });
+  }
+
+  moveToLogin() {
+    this.router.navigate(['/index/login']);
   }
 
 }

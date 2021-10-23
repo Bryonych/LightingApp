@@ -4,6 +4,9 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
 import { Observable, from } from 'rxjs';
 
+/**
+ * Handles the authentication with Firebase.
+ */
 @Injectable()
 export class FirebaseAuthService {
     currentUser: firebase.User;

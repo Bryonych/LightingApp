@@ -1,14 +1,67 @@
-.controller {
-    .redColor {
-        ion-icon { color: red; }
+
+#header {
+    ion-title {
+        color: darkBlue;
     }
-    .greenColor {
-        ion-icon { color: green; }
+}
+
+#controller {
+
+    justify-content: space-between;
+
+    ion-spinner {
+        height: 100px;
+        margin: auto;
     }
-    .blueColor {
-        ion-icon { color: blue; }
+
+    img {
+        height: 25vh;
+        width: auto;
+        margin: auto;
+        display: block;
     }
-    .whiteColor {
-        ion-icon { color: white; }
+
+    ion-row {
+        margin-top: 50px;
+    }
+
+    ion-col {
+        margin-left: 20px;
+    }
+
+    #button {
+        margin: auto;
+        height: 50px;
+        width:  100px;
+        background-color: darkBlue;
+        font-weight: bold;
+        color: white;
+    }
+
+    #red {
+        margin: auto;
+        height: 50px;
+        width:  100px;
+        background-color: red;
+        font-weight: bold;
+        color: black;
+    }
+
+    #green {
+        margin: auto;
+        height: 50px;
+        width:  100px;
+        background-color: lightGreen;
+        font-weight: bold;
+        color: black;
+    }
+    
+    #blue {
+        margin: auto;
+        height: 50px;
+        width:  100px;
+        background-color: lightskyblue;
+        font-weight: bold;
+        color: black;
     }
 }

@@ -1,0 +1,29 @@
+
+#header {
+    ion-title {
+        color: darkBlue;
+    }
+}
+
+#proximity {
+    text-align: center;
+
+    h2 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 50px;
+        padding: 30px;
+    }
+    div {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 22px;
+    }
+    button {
+        margin: auto;
+        height: 40px;
+        width:  150px;
+        background-color: darkBlue;
+        color: white;
+    }
+}

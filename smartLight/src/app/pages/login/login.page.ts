@@ -8,6 +8,9 @@ import { FirebaseAuthService } from 'src/app/services/firebase-auth.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+/**
+ * Represents the login page.
+ */
 export class LoginPage implements OnInit {
   email: string = "";
   password: string = "";

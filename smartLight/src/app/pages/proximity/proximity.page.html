@@ -1,9 +1,15 @@
-<ion-header>
+<ion-header id="header">
   <ion-toolbar>
-    <ion-title>proximity</ion-title>
+    <ion-title>Proximity</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content id="proximity">
+  <h2>Do you want to auto-connect to your device?</h2>
+  <div>Auto-connect will turn the lights on when you return home.</div>
+  <ion-buttons>
+    <button ion-button id="button" (click)="autoConnect()">Yes</button>
+    <button ion-button id="button" (click)="disconnect()">No</button>
+  </ion-buttons>
 
 </ion-content>
